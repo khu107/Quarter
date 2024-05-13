@@ -1,14 +1,7 @@
-// ZK-TASK:
+// ZL-TASK:
 
-function printNumbers() {
-	const interval = setInterval(() => {
-		for (let i = 1; i <= 5; i++) {
-			console.log(i);
-		}
-	}, 1000);
-	setTimeout(() => {
-		clearTimeout(interval);
-	}, 5000);
+function stringToKebab(str: string) {
+	return str.toLowerCase().replaceAll(' ', '-');
 }
 
-printNumbers();
+console.log(stringToKebab('I love Kebab'));
