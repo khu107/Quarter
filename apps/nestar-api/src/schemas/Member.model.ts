@@ -23,13 +23,13 @@ const MemberSchema = new Schema(
 
 		memberPhone: {
 			type: String,
-			indesx: { unique: true, sparse: true },
+			index: { unique: true, sparse: true },
 			required: true,
 		},
 
 		memberNick: {
 			type: String,
-			indesx: { unique: true, sparse: true },
+			index: { unique: true, sparse: true },
 			required: true,
 		},
 
@@ -72,6 +72,11 @@ const MemberSchema = new Schema(
 		},
 
 		memberFollowings: {
+			type: Number,
+			default: 0,
+		},
+
+		memberPoints: {
 			type: Number,
 			default: 0,
 		},
