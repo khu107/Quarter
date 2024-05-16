@@ -1,7 +1,8 @@
-// ZL-TASK:
+// ZM-TASK:
 
-function stringToKebab(str: string) {
-	return str.toLowerCase().replaceAll(' ', '-');
+function reverseInteger(num: number) {
+	let changeStr = String(num).split('').reverse().join('');
+	return +changeStr;
 }
 
-console.log(stringToKebab('I love Kebab'));
+console.log(reverseInteger(123456789));
