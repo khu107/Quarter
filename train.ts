@@ -1,8 +1,20 @@
 // ZM-TASK:
 
-function reverseInteger(num: number) {
-	let changeStr = String(num).split('').reverse().join('');
-	return +changeStr;
+function rotateArray(arr: number[], index: number): number[] {
+	const rotated: number[] = [];
+	const len: number = arr.length;
+	index = (index - 1) % len;
+
+	for (let i = len - index; i < len; i++) {
+		rotated.push(arr[i]);
+	}
+
+	for (let i = 0; i < len - index; i++) {
+		rotated.push(arr[i]);
+	}
+
+	return rotated;
 }
 
-console.log(reverseInteger(123456789));
+const result: number[] = rotateArray([1, 2, 3, 4, 5, 6], 3);
+console.log(result); // [5, 6, 1, 2, 3, 4]
