@@ -1,19 +1,26 @@
-// ZO-TASK:
+// ZP-TASK:
 
-function areParenthesesBalanced(arr: string): boolean {
-	let ochish: number = 0;
-	let yopish: number = 0;
+function majorityElement(arr: number[]): number {
+	let obj: { [key: number]: number } = {};
 
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] === '(') {
-			ochish += 1;
-		} else if (arr[i] === ')') {
-			yopish += 1;
+	arr.forEach((e) => {
+		if (obj[e]) {
+			obj[e]++;
+		} else {
+			obj[e] = 1;
+		}
+	});
+
+	let maxCount: number = 0;
+	let majorityElem: string;
+
+	for (let key in obj) {
+		if (obj[key] > maxCount) {
+			maxCount = obj[key];
+			majorityElem = key;
 		}
 	}
-	console.log(ochish, yopish);
 
-	return ochish === yopish ? true : false;
+	return parseInt(majorityElem);
 }
-
-console.log(areParenthesesBalanced('string()ichida(qavslar)soni()balansda'));
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
