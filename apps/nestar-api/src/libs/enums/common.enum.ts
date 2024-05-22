@@ -18,6 +18,7 @@ export enum Message {
 	ONLY_SPECIFIC_ROLES_ALLOWED = 'Allowed only for members with specific roles!',
 	NOT_ALLOWED_REQUEST = 'Not Allowed Request!',
 	NOT_ALLOWED_FORMAT = 'Please provide jpg, jpeg, or png images!',
+	PROVIDE_ALLOWED_FORMAT = 'PROVIDE_ALLOWED_FORMAT',
 	SELF_SUBSCRIPTION_DENIED = 'Self subsecription is denied!',
 }
 
