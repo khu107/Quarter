@@ -44,7 +44,7 @@ export class PropertyInput {
 
 	@IsNotEmpty()
 	@Field(() => [String])
-	propertyImages: string;
+	propertyImages: string[];
 
 	@IsOptional()
 	@Length(5, 500)
