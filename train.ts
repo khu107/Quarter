@@ -1,26 +1,19 @@
-// ZP-TASK:
+// ZQ-TASK:
 
-function majorityElement(arr: number[]): number {
-	let obj: { [key: number]: number } = {};
+function findDuplicates(nums: number[]): number[] {
+	const duplicates: number[] = [];
+	const seen: Set<number> = new Set();
+	const seenDuplicates: Set<number> = new Set();
 
-	arr.forEach((e) => {
-		if (obj[e]) {
-			obj[e]++;
-		} else {
-			obj[e] = 1;
+	for (const num of nums) {
+		if (seen.has(num) && !seenDuplicates.has(num)) {
+			duplicates.push(num);
+			seenDuplicates.add(num);
 		}
-	});
-
-	let maxCount: number = 0;
-	let majorityElem: string;
-
-	for (let key in obj) {
-		if (obj[key] > maxCount) {
-			maxCount = obj[key];
-			majorityElem = key;
-		}
+		seen.add(num);
 	}
 
-	return parseInt(majorityElem);
+	return duplicates;
 }
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
