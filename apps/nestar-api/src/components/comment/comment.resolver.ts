@@ -49,7 +49,7 @@ export class CommentResolver {
 		return await this.commentService.getComments(memberId, input);
 	}
 
-	/** ADMIN **/
+	// ADMIN
 	@Roles(MemberType.ADMIN)
 	@UseGuards(RolesGuard)
 	@Mutation((returns) => Comment)
