@@ -1,11 +1,24 @@
-// ZS-TASK:
+// ZT-TASK:
 
-function singleNumber(nums: number[]): number {
-	let result: number = 0;
-	for (let num of nums) {
-		result ^= num;
+function firstUniqueCharIndex(s: string): number {
+	const charCount: { [key: string]: number } = {};
+
+	for (let i = 0; i < s.length; i++) {
+		const char = s[i];
+		if (charCount[char] === undefined) {
+			charCount[char] = 1;
+		} else {
+			charCount[char]++;
+		}
 	}
-	return result;
+
+	for (let i = 0; i < s.length; i++) {
+		if (charCount[s[i]] === 1) {
+			return i;
+		}
+	}
+
+	return -1;
 }
 
-console.log(singleNumber([4, 2, 1, 2, 1]));
+console.log(firstUniqueCharIndex('stamp'));
