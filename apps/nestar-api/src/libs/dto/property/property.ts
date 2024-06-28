@@ -78,11 +78,11 @@ export class Property {
 	@Field(() => Date)
 	updatedAt: Date;
 
-	@Field(() => [MeLiked], { nullable: true })
-	meLiked?: MeLiked[];
-
 	@Field(() => Member, { nullable: true })
 	memberData?: Member;
+
+	@Field(() => [MeLiked], { nullable: true })
+	meLiked?: MeLiked[];
 }
 @ObjectType()
 export class Properties {
