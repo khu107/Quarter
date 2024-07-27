@@ -25,4 +25,16 @@ export class NotificationService {
 	public async getNotifications(): Promise<Notification[]> {
 		return this.notificationModel.find().exec();
 	}
+	public async markNotificationsAsRead(ids: string[]): Promise<Notification[]> {
+		try {
+			await this.notificationModel.updateMany(
+				{ _id: { $in: ids } },
+				{ $set: { notificationStatus: NotificationStatus.READ } },
+			);
+			return this.notificationModel.find({ _id: { $in: ids } });
+		} catch (err) {
+			console.log('Error, NotificationService.markNotificationsAsRead', err.message);
+			throw new BadRequestException('Failed to mark notifications as read');
+		}
+	}
 }

@@ -16,4 +16,9 @@ export class NotificationResolver {
 	async getNotifications(): Promise<Notification[]> {
 		return await this.notificationService.getNotifications();
 	}
+
+	@Mutation(() => [Notification])
+	async markNotificationsAsRead(@Args({ name: 'ids', type: () => [String] }) ids: string[]): Promise<Notification[]> {
+		return this.notificationService.markNotificationsAsRead(ids);
+	}
 }
