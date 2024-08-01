@@ -47,6 +47,13 @@ export class PropertyResolver {
 		return await this.propertyService.getProperty(memberId, propertyId);
 	}
 
+	@UseGuards(WithoutGuard)
+	@Query(() => Property)
+	public async getLastSoldProperty(): Promise<Property> {
+		console.log('Query: getLastSoldProperty');
+		return this.propertyService.getLastSoldProperty();
+	}
+
 	@Roles(MemberType.AGENT)
 	@UseGuards(RolesGuard)
 	@Mutation((returns) => Property)
