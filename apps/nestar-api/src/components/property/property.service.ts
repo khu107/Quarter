@@ -75,7 +75,7 @@ export class PropertyService {
 	public async getLastSoldProperty(): Promise<Property> {
 		const lastSoldProperty = await this.propertyModel
 			.findOne({ propertyStatus: PropertyStatus.SOLD })
-			.sort({ soldAt: -1 })
+			.sort({ updatedAt: -1 })
 			.exec();
 
 		if (!lastSoldProperty) {

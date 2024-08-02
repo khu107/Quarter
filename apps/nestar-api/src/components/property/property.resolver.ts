@@ -51,7 +51,7 @@ export class PropertyResolver {
 	@Query(() => Property)
 	public async getLastSoldProperty(): Promise<Property> {
 		console.log('Query: getLastSoldProperty');
-		return this.propertyService.getLastSoldProperty();
+		return await this.propertyService.getLastSoldProperty();
 	}
 
 	@Roles(MemberType.AGENT)
