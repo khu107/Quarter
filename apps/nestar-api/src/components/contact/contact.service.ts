@@ -5,14 +5,12 @@ import { Contact } from '../../libs/dto/contact/contact';
 import { ContactInput } from '../../libs/dto/contact/contact.input';
 import { Message } from '../../libs/enums/common.enum';
 import { NotificationService } from '../notification/notification.service';
-import { PropertyService } from '../property/property.service';
 
 @Injectable()
 export class ContactService {
 	constructor(
 		@InjectModel('Contact') private readonly contactModel: Model<Contact>,
 		private readonly notificationService: NotificationService,
-		// private readonly propertyService: PropertyService,
 	) {}
 
 	public async createMessage(memberId: ObjectId, input: ContactInput): Promise<Contact> {
