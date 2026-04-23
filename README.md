@@ -1,11 +1,11 @@
-# 🏢 Quarter : 부동산 매물 중개 온라인 플랫폼
+#  Quarter : 부동산 매물 중개 온라인 플랫폼
 
 > **"사용자 맞춤형 매물 데이터와 실시간 소통을 지원하는 B2C/C2C 중개 플랫폼 서버"** <br/>
 > 단일 API 서버의 한계를 넘어, **마이크로 모듈 구조**와 **배치(Batch) 서버 격리**를 통해 확장성 있는 백엔드 아키텍처를 고민하며 개발한 1인 풀스택 프로젝트입니다.
 
 <br/>
 
-## 📚 Table of Contents
+##  Table of Contents
 - [Architecture & ERD](#-architecture--erd)
 - [Tech Stack](#-tech-stack)
 - [Key Features & Troubleshooting](#-key-features--troubleshooting)
@@ -13,7 +13,7 @@
 
 <br/>
 
-## 🏗 Architecture & ERD
+##  Architecture & ERD
 
 ### System Architecture
 - **모듈 분리:** `auth`, `member`, `property`, `like`, `board-article` 등 도메인별로 NestJS 모듈을 철저히 분리하여 유지보수성 극대화
@@ -24,7 +24,7 @@
 - **설계 포인트:** MongoDB의 Object ID를 활용한 효율적인 참조(Reference) 관계 모델링을 통해 유저, 매물, 소셜(팔로우/좋아요) 간의 데이터 무결성 확보
 
 
-## ☁️ Deployment & Infrastructure
+##  Deployment & Infrastructure
 
 ![Quarter Deployment](./tmp/deployment.webp)
 
@@ -35,7 +35,7 @@
 
 <br/>
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 ### Backend
 - **Framework:** NestJS (Node.js)
@@ -51,7 +51,7 @@
 
 <br/>
 
-## 🔥 Key Features & Troubleshooting
+##  Key Features & Troubleshooting
 
 ### 1. 다중 필터 검색 시스템 (Mongoose Aggregation Pipeline)
 - **도전:** 수만 건의 매물을 가격, 면적, 옵션 등 다양한 조건으로 검색할 때 발생하는 쿼리 성능 저하 문제
@@ -70,18 +70,9 @@
 
 <br/>
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js (v16 이상 권장)
 - MongoDB 실행 환경
 
-### Installation
-```bash
-# 레포지토리 클론
-$ git clone https://github.com/khu107/Quarter.git
-
-# 패키지 설치
-$ cd Quarter
-$ npm install
-```
